@@ -47,7 +47,8 @@ def move():
     ontimer(move, 100)
 
 setup(420, 420, 370, 0)
-color = ['black','green','yellow','blue','orange']
+color = ['black','green','yellow','blue','orange']    #Define the posible colors.
+# Select 2 random colors from the list and check colors are not the same.
 color1 = random.choice(color)
 color2 = random.choice(color)
 while color1 == color2:
