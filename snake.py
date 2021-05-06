@@ -16,7 +16,7 @@ def change(x, y):
     # Update x & y values.
     aim.x = x
     aim.y = y
-    
+
 
 def inside(head):
     """
@@ -29,18 +29,18 @@ def move():
     """
     Move snake forward one segment.
     """
-    head = snake[-1].copy()    # 
+    head = snake[-1].copy()    # Set head as the las unit of snake.
     head.move(aim)             # Make the snake move in aim's direction.
-    
+
     # Assign a random food's movement direction.
     movx = random.randrange(-10,11,10)
     movy = random.randrange(-10,11,10)
-    
+
     # Make sure that the food doesn't return to the last position.
     while movx == -foodmov.x and movy == -foodmov.y:
         movx = random.randrange(-10,11,10)
         movy = random.randrange(-10,11,10)
-         
+
     # Assure that the food stays within the boundries.
     if food.x > 180:
         movx = -10
@@ -50,13 +50,13 @@ def move():
         movy = -10
     if food.y < -190:
         movy = 10
-        
+
     # Updates food's movement direction.
     foodmov.x = movx
     foodmov.y = movy
-    
-    food.move(foodmov) # Make the food move in foodmov's direction.
-    
+
+    food.move(foodmov)    # Make the food move in foodmov's direction.
+
     # Stop the game when the snake touches the boundries.
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
@@ -80,7 +80,7 @@ def move():
     for body in snake:
         square(body.x, body.y, 9, 'black')
     square(food.x, food.y, 9, 'green')
-    
+
     update()
     ontimer(move, 100)    # Set the movement rate.
 
