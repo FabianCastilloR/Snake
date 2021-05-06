@@ -78,13 +78,22 @@ def move():
 
     # Generate the shape of the snake's and food's units.
     for body in snake:
-        square(body.x, body.y, 9, 'black')
-    square(food.x, food.y, 9, 'green')
+        square(body.x, body.y, 9, color1)
+    square(food.x, food.y, 9, color2)
 
     update()
     ontimer(move, 100)    # Set the movement rate.
 
 setup(420, 420, 370, 0)    # Create the workspace.
+color = ['black','green','yellow','blue','orange']    #Define the posible colors.
+
+# Select 2 random colors from the list and check colors are not the same.
+color1 = random.choice(color)
+color2 = random.choice(color)
+while color1 == color2:
+        color1 = random.choice(color)
+        color2 = random.choice(color)
+
 hideturtle()
 tracer(False)              # Deactivate the turtle's animation.
 listen()                   # Prepare the turtle to receive directions.
