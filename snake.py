@@ -1,3 +1,7 @@
+# Código modificado por:
+# Autor: Fabián Castillo Rodríguez
+# Autor: Sergio Adolfo Sanoja Hernández
+
 from turtle import *
 import random
 from freegames import square, vector
